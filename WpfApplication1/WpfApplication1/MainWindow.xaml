@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <!--定義格子-->
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Column="0" Fill="DarkOrange">  </Rectangle>
+        <Rectangle Grid.Column="1" Fill="Gray"></Rectangle>
+
+        <StackPanel Grid.Column="1" Margin="20">
+            <Button Margin="0,0,0,20" x:Name="OpenBtn" Click="OpenBtn_Click" >Open</Button>
+            <Button x:Name="SaveBtn" Click="SaveBtn_Click" >Save</Button>
+        </StackPanel>
+
+        <!--左邊打字,ScrollViewer是滾輪-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <TextBox Margin="5,5,0,5" AcceptsReturn="True" TextWrapping="Wrap" x:Name="Textarea"></TextBox>
+        </ScrollViewer>
+    </Grid>
+</Window>
